@@ -1,7 +1,7 @@
 server 'testing-host.domain',
-       roles: %w(web app db),
+       roles:   %w(web app db),
        primary: true,
-       user: 'username'
+       user:    'username'
 
 set :keep_releases, 3
 set :env, worker_count: 4
