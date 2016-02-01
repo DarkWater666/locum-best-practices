@@ -1,0 +1,2 @@
+module LocumBestPractices
+end
