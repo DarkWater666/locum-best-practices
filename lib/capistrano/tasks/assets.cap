@@ -1,0 +1,22 @@
+namespace :assets do
+  desc 'Assets precompile'
+  task :compile do
+    on roles(:app, :web, :db) do
+      execute "cd #{fetch(:deploy_to)}/current; #{fetch(:production_rake)} assets:precompile"
+    end
+  end
+
+  desc 'Assets clear'
+  task :clear do
+    on roles(:app, :wev, :db) do
+      execute "cd #{fetch(:deploy_to)}/current; #{fetch(:production_rake)} assets:clean"
+    end
+  end
+
+  desc 'Assets nuke'
+  task :nuke do
+    on roles(:app, :wev, :db) do
+      execute "cd #{fetch(:deploy_to)}/current; #{fetch(:production_rake)} assets:clobber"
+    end
+  end
+end

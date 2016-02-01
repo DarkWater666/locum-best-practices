@@ -1,0 +1,22 @@
+namespace :sidekiq do
+  desc 'Sidekiq start'
+  task :start do
+    on roles(:app, :web) do
+      execute "#{fetch(:sidekiq_start_cmd)}"
+    end
+  end
+
+  desc 'Sidekiq Stop'
+  task :stop do
+    on roles(:app, :web) do
+      execute "#{fetch(:sidekiq_stop_cmd)}"
+    end
+  end
+
+  desc 'Sidekiq restart'
+  task :restart do
+    on roles(:app, :web) do
+      execute "#{fetch(:sidekiq_stop_cmd)}; sleep 5; #{fetch(:sidekiq_start_cmd)}"
+    end
+  end
+end

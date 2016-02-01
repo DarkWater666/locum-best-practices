@@ -1,0 +1,11 @@
+namespace :ssh do
+  desc 'SSH connect and move to current folder'
+  task :connect do
+    on roles(:app) do |server|
+      params = "#{fetch(:user)}@#{server}"
+      params += %( -t "cd projects/#{fetch(:application)}/current && bash -l")
+      info "Opening a console on: #{server}...."
+      exec "ssh #{params}"
+    end
+  end
+end

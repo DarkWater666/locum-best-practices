@@ -1,0 +1,10 @@
+namespace :remote do
+  # TODO: move comments to README
+  # e.g: 'cap stage logs:tail[logfile]' will tail 'shared_path/log/logfile.log'.
+  desc 'Tail logs on remote host'
+  task :logs, :file do |_t, args|
+    on roles(:app) do
+      execute "tail -f #{shared_path}/log/#{args[:file] || fetch(:rails_env)}.log"
+    end
+  end
+end

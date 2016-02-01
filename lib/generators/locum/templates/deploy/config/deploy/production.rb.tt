@@ -1,0 +1,7 @@
+server 'production-host.domain',
+       roles: %w(web app db),
+       primary: true,
+       user: 'username'
+
+set :rails_env, :production
+set :ssh_options, forward_agent: true
