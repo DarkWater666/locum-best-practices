@@ -1,4 +1,4 @@
-set :application,       'your_application_name'
+set :user,              'your_ssh_user'
 set :login,             'your_locum_login'
 set :rvm_ruby_version,  'your_ruby_version'
 set :repo_url,          'git@bitbucket.org:DCStudio/your_application_name'

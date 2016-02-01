@@ -1,4 +1,4 @@
-set :user,        'your_application_user'
+set :application, 'your_application_name'
 set :rails_env,   :production
 set :ssh_options, forward_agent: true
 

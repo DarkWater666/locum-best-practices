@@ -2,9 +2,9 @@ namespace :load do
   task :defaults do
     lock '3.4.0'
 
-    set :deploy_to,             "/home/#{fetch(:user)}/projects/#{fetch(:application)}"
-    set :unicorn_config_path,   "/etc/unicorn/#{fetch(:application)}.#{fetch(:login)}.rb"
-    set :unicorn_pid,           "/var/run/unicorn/#{fetch(:user)}/#{fetch(:application)}.#{fetch(:login)}.pid"
+    set :deploy_to,             -> { "/home/#{fetch(:user)}/projects/#{fetch(:application)}" }
+    set :unicorn_config_path,   -> { "/etc/unicorn/#{fetch(:application)}.#{fetch(:login)}.rb" }
+    set :unicorn_pid,           -> { "/var/run/unicorn/#{fetch(:user)}/#{fetch(:application)}.#{fetch(:login)}.pid" }
     set :sidekiq_pid,           "#{fetch(:deploy_to)}/shared/tmp/pids/sidekiq-0.pid"
     set :bundle_without,        [:development, :test, :console, :doc]
     set :use_sudo,              false

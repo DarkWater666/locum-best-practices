@@ -1,4 +1,4 @@
-set :user,              'your_application_user'
+set :application,       'your_application_name'
 set :rails_env,         :testing
 set :keep_releases,     3
 set :env, worker_count: 4
