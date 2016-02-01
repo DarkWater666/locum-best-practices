@@ -19,4 +19,6 @@ namespace :sidekiq do
       execute "#{fetch(:sidekiq_stop_cmd)}; sleep 5; #{fetch(:sidekiq_start_cmd)}"
     end
   end
+
+  after 'unicorn:restart', 'sidekiq:restart'
 end
