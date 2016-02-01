@@ -8,7 +8,7 @@ namespace :ssh do
 
       info "Opening a console on: #{server} ..."
       params = "#{fetch(:user)}@#{server}"
-      params = " -p #{server.port}" if server.port
+      params += " -p #{server.port}" if server.port
       params += %( -t "cd projects/#{fetch(:application)}/current && bash -l")
       info "Connection success for user: #{fetch(:user)}"
       exec "ssh #{params}"
