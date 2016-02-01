@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Simple best practices, used for soft deployment to locum hosting'
   spec.description   = 'Contains deploy configuration'
-  spec.homepage      = 'http://darkcreative-studio.ru'
+  spec.homepage      = 'https://github.com/DarkWater666/locum-best-practices'
 
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = 'https://rubygems.org'
@@ -22,6 +22,8 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(/^exe/) { |f| File.basename(f) }
   spec.require_paths = %w(lib)
+
+  spec.required_ruby_version = '>= 2.2.0'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.0'
