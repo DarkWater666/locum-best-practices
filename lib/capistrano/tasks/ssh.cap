@@ -6,13 +6,11 @@ namespace :ssh do
 
       return if server != roles(:app)[server_index]
 
-      info "Opening a console on: #{host} ..."
-      user = server.user
-      port = server.port
-      params = "#{user}@#{host}"
-      params = " -p #{port}" if port
+      info "Opening a console on: #{server} ..."
+      params = "#{fetch(:user)}@#{server}"
+      params = " -p #{server.port}" if server.port
       params += %( -t "cd projects/#{fetch(:application)}/current && bash -l")
-      info "Connection success for user: #{user}"
+      info "Connection success for user: #{fetch(:user)}"
       exec "ssh #{params}"
     end
   end

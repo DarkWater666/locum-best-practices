@@ -1,9 +1,10 @@
+set :user,              'your_application_user'
+set :rails_env,         :testing
+set :keep_releases,     3
+set :env, worker_count: 4
+set :ssh_options, forward_agent: true
+
 server 'testing-host.domain',
        roles:   %w(web app db),
        primary: true,
-       user:    'username'
-
-set :keep_releases, 3
-set :env, worker_count: 4
-set :rails_env, :testing
-set :ssh_options, forward_agent: true
+       user:    fetch(:user)

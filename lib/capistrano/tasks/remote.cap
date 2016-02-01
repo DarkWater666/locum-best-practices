@@ -4,10 +4,11 @@ namespace :remote do
   desc 'Tail logs on remote host'
   task :logs, :file do |_t, args|
     on roles(:app) do |server|
-      user = server.user
-      params = "#{user}@#{host}"
+      info "Opening a console on: #{server} ..."
+      params = "#{fetch(:user)}@#{server}"
       file = "#{args[:file] || fetch(:rails_env)}"
-      params += %( -t "tail -f /home/#{user}/projects/#{fetch(:application)}/shared/log/#{file}.log")
+      params += %( -t "tail -f #{fetch(:deploy_to)}/shared/log/#{file}.log")
+      info "Read logs for user: #{fetch(:user)}"
       exec "ssh #{params}"
     end
   end
