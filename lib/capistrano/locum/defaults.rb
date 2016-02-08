@@ -2,7 +2,7 @@ namespace :load do
   task :defaults do
     lock '3.4.0'
     load "config/deploy.rb"
-    load "config/deploy/#{fetch(:stage)}.rb"
+    load "config/deploy/#{fetch(:stage)}.rb" if fetch(:stage)
 
     set :deploy_to,             "/home/#{fetch(:user)}/projects/#{fetch(:application)}"
     set :unicorn_config_path,   "/etc/unicorn/#{fetch(:application)}.#{fetch(:login)}.rb"
