@@ -51,11 +51,11 @@ This creates the following files, you can edit them for your choice.
 
 ### Install in your system:
 
-  gem install locum
+    gem install locum
   
 And execute after 'cap install':
 
-  $ locum cap 
+    $ locum cap 
 
 ### Custom stages
 

@@ -22,7 +22,7 @@ namespace :load do
     set :env, worker_count:     8
 
     set :linked_files,          fetch(:linked_files, []) + %w(config/database.yml config/application.yml config/newrelic.yml)
-    set :linked_dirs,           fetch(:linked_dirs, []) + %w(bin log tmp/cache tmp/pids tmp/sockets vendor/bundle public/system)
+    set :linked_dirs,           fetch(:linked_dirs, []) + %w(bin log tmp/cache tmp/pids tmp/sockets vendor/bundle public/system public/uploads public/mails)
 
     set :default_environments,  'RAILS_ENV=production'
     set :production_rake,       "rvm use #{fetch(:rvm_ruby_version)} do bundle exec rake #{fetch(:default_environments)}"
