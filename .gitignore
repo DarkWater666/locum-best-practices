@@ -7,8 +7,8 @@
 /pkg/
 /spec/reports/
 /tmp/
-!/lib/generators/config
 .*
+!/lib/generators/locum/templates/deploy/
 !/.editorconfig
 !/.gitignore
 !/.rubocop.yml
