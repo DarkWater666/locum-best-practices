@@ -7,10 +7,5 @@
 /pkg/
 /spec/reports/
 /tmp/
-.*
-!/lib/generators/locum/templates/deploy/
-!/.editorconfig
-!/.gitignore
-!/.rubocop.yml
 .idea/
 doc/
