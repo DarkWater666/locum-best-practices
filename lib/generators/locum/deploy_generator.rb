@@ -10,12 +10,5 @@ Prepares application to deploy and add custom stages. `testing` and `production`
     def add_deploy_templates
       directory 'deploy', '.'
     end
-
-    def create_custom_stages
-      stages.each do |stage|
-        template 'deploy/config/deploy/testing.rb.tt', "config/deploy/#{stage}.rb"
-        template 'deploy/config/environments/testing.rb.tt', "config/environments/#{stage}.rb"
-      end
-    end
   end
 end
