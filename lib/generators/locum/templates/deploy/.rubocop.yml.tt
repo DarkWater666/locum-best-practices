@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/**/*
+Rails:
+  Enabled: true
+Style/Documentation:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Metrics/AbcSize:
+  Max: 25
+Metrics/LineLength:
+  Max: 120
+Metrics/MethodLength:
+  Max: 25

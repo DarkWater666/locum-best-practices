@@ -1,0 +1,3 @@
+#host: site host
+#title: application title
+#redis_url: redis server url

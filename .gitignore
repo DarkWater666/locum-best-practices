@@ -7,9 +7,5 @@
 /pkg/
 /spec/reports/
 /tmp/
-.*
-!/.editorconfig
-!/.gitignore
-!/.rubocop.yml
 .idea/
 doc/
