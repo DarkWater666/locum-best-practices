@@ -1,4 +1,5 @@
 # Locum Best Practices
+This gem makes your configuring deployment on [locum.ru](http://locum.ru/) faster!
 > for Ruby on Rails applications
 
 ## Features
@@ -30,17 +31,17 @@ And then execute:
 
 ## Usage
 
-## Advanced usage
-
-### Install `gem locum` in your system only. Not include it in gemfile:
+### Install `gem locum` in your system only. Not include it in your gemfile:
 
     gem install locum
   
-### And execute after `cap install`:
+### And execute:
 
-    $ locum cap 
+    $ locum init
+    
+    > You need enter login and password from locum hosting account.
 
-### Add deployment configuration
+### Add deployment configuration:
 
     $ rails g locum:deploy
 
