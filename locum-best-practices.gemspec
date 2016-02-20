@@ -37,6 +37,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'capistrano3-unicorn', '~> 0.2.0'
   spec.add_dependency 'capistrano-rails-console', '~> 1.0.0'
   spec.add_dependency 'figaro', '~> 1.1.1'
+  spec.add_dependency 'unicorn', '~> 5.0.0'
+  spec.add_dependency 'unicorn-worker-killer', '~> 0.4.0'
 
   spec.add_development_dependency 'rubocop', '>= 0.3.0'
 end
