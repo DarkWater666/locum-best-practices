@@ -1,3 +1,5 @@
-#host: site host
-#title: application title
-#redis_url: redis server url
+#host: 'site_host'
+#redis_url: 'redis_server_url'
+#title: 'application_title'
+#project: 'project_title'
+#secret: 'run_rake_secret_and_paste_result'
