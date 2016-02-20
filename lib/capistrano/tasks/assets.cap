@@ -1,22 +1,29 @@
 namespace :assets do
-  desc 'Assets precompile'
-  task :compile do
+  desc 'Precompile all assets in pipeline'
+  task :precompile do
     on roles(:app, :web, :db) do
       execute "cd #{fetch(:deploy_to)}/current; #{fetch(:production_rake)} assets:precompile"
     end
   end
 
-  desc 'Assets clear'
+  desc 'Clears not actual versions of assets'
   task :clear do
     on roles(:app, :wev, :db) do
       execute "cd #{fetch(:deploy_to)}/current; #{fetch(:production_rake)} assets:clean"
     end
   end
 
-  desc 'Assets nuke'
-  task :nuke do
+  desc 'Clobber?'
+  task :clobber do
     on roles(:app, :wev, :db) do
       execute "cd #{fetch(:deploy_to)}/current; #{fetch(:production_rake)} assets:clobber"
+    end
+  end
+
+  desc 'Permanent removes all assets'
+  task :explode do
+    on roles(:app, :wev, :db) do
+      execute "cd #{fetch(:deploy_to)}/shared/public; rm -rf assets"
     end
   end
 end
