@@ -1,5 +1,14 @@
-#host: 'site_host'
-#redis_url: 'redis_server_url'
-#title: 'application_title'
-#project: 'project_title'
-#secret: 'run_rake_secret_and_paste_result'
+title: 'application_title'
+project: 'project_name'
+
+host: 'host_and_port_to_run'
+redis_url: 'host_redis'
+
+db_user: 'database_user'
+db_password: 'database_password'
+db_host: 'database_host'
+
+secret_development: 'rake secret'
+secret_testing: 'rake secret'
+secret_production: 'rake secret'
+newrelic_key: 'newrelic_licence_key'

@@ -1,11 +1,11 @@
 common: &default_settings
-  license_key: your_licence_key
-  app_name: application_title
+  license_key: <%= Figaro.env.new_relic_key %>
+  app_name: <%= Figaro.env.title %>
   log_level: info
 
 development:
   <<: *default_settings
-  app_name: application_title (Development)
+  app_name: <%= "#{Figaro.env.title} (Development)" %>
   developer_mode: true
   monitor_mode: false
 
@@ -15,7 +15,7 @@ test:
 
 staging:
   <<: *default_settings
-  app_name: application_title (Staging)
+  app_name: <%= "#{Figaro.env.title} (Staging)" %>
 
 production:
   <<: *default_settings

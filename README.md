@@ -50,6 +50,8 @@ This creates the following files, you can edit them for your choice.
 ```
 ├── Capfile
 └── config
+    ├── initializers
+    │   └── figaro.rb
     ├── deploy
     │   ├── production.rb
     │   └── testing.rb
@@ -57,6 +59,8 @@ This creates the following files, you can edit them for your choice.
     │   └── testing.rb
     ├── deploy.rb
     ├── newrelic.yml
+    ├── database.yml
+    ├── secrets.yml
     └── application.yml
 ├── .editorconfig  
 └── .rubocop.yml
