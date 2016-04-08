@@ -14,7 +14,6 @@ namespace :load do
     ask :branch,                proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
     set :scm,                   :git
-    set :format,                :pretty
     set :pty,                   true
 
     set :log_level,             :info
