@@ -6,9 +6,19 @@ This gem makes your configuring deployment on [locum.ru](http://locum.ru/) faste
 
 * Deployment
   - Capistrano integration
-  - configuration and stages generator
-  - custom tasks
-  - predefined default [settings](lib/capistrano/snp/defaults.rb)
+  - Configuration generator
+  - Custom tasks
+  - Predefined default [settings](lib/capistrano/locum/defaults.rb)
+  - Pretty logs with [Airbrussh gem](https://github.com/mattbrictson/airbrussh)
+  
+* Environment
+  - All secret variables in one file [application](lib/generators/locum/templates/deploy/config/application.yml.tt)
+  - Variables with [Figaro gem](https://github.com/laserlemon/figaro)
+  - Require keys
+  
+* Web server
+  - Unicorn in requirements
+  - Config predefined  
   
 ## Requirements
 
@@ -50,6 +60,8 @@ This creates the following files, you can edit them for your choice.
 ```
 ├── Capfile
 └── config
+    ├── initializers
+    │   └── figaro.rb
     ├── deploy
     │   ├── production.rb
     │   └── testing.rb
@@ -57,6 +69,8 @@ This creates the following files, you can edit them for your choice.
     │   └── testing.rb
     ├── deploy.rb
     ├── newrelic.yml
+    ├── database.yml
+    ├── secrets.yml
     └── application.yml
 ├── .editorconfig  
 └── .rubocop.yml

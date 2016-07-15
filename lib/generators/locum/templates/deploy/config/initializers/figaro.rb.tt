@@ -1,0 +1,2 @@
+Figaro.require_keys('title', 'project', 'host', 'db_user', 'db_password', 'db_host',
+                    'secret_development', 'secret_testing', 'secret_production')

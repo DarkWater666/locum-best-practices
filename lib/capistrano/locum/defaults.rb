@@ -1,6 +1,6 @@
 namespace :load do
   task :defaults do
-    lock '3.4.0'
+    lock '>= 3.4.0'
     load "config/deploy.rb"
     load "config/deploy/#{fetch(:stage)}.rb" if fetch(:stage)
 
@@ -14,14 +14,13 @@ namespace :load do
     ask :branch,                proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
     set :scm,                   :git
-    set :format,                :pretty
     set :pty,                   true
 
     set :log_level,             :info
     set :keep_releases,         5
     set :env, worker_count:     8
 
-    set :linked_files,          fetch(:linked_files, []) + %w(config/database.yml config/application.yml config/newrelic.yml)
+    set :linked_files,          fetch(:linked_files, []) + %w(config/application.yml public/sitemap.xml)
     set :linked_dirs,           fetch(:linked_dirs, []) + %w(bin log tmp/cache tmp/pids tmp/sockets vendor/bundle public/system public/uploads public/mails)
 
     set :default_environments,  'RAILS_ENV=production'
